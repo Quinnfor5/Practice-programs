@@ -12,29 +12,29 @@ def values():
     try:
         values.amount = float(input("enter initial amount invested: "))
     except:
-        values.amount = -1
+        values.amount = None
     try:
         values.per = float(input("enter return percentage: "))
     except:
-        values.per = -1
+        values.per = None
     try:
         values.time = float(input("enter years invested: "))
     except:
-        values.time = -1
+        values.time = None
         
 #check and make sure inputs are usable and if not usable, ask for usable data.
 def check():
-    if values.amount < 0:
+    if values.amount is None:
         print("Not a valid input for Amount Invested!")
         print("Please enter number with no commas.")
         print("Example: 15000 not 15,000.")
         values()
-    if values.per < 0:
+    if values.per is None:
         print("Not a valid input for return percentage!")
         print("Please enter percentage with no added characters.")
         print("Example: 15 or 0.15, not 15%")
         values()
-    if values.time < 0:
+    if values.time is None:
         print("Not a valid input for years invested!")
         print("Please enter number value of years.")
         print("Example: 5 not five")
